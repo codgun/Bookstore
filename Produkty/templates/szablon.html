@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Bookstore</title>
+</head>
+<body>
+<h1> Witaj w naszej księgarni</h1>
+<h3> Fajnie ze wpadłeś </h3>
+{% for kat in kategorie %}
+
+<p><a href="kategorie/{{ kat.id }}"> {{ kat.nazwa }} </a></p>
+
+{% endfor %}
+
+</body>
+</html>
