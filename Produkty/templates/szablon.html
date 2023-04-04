@@ -5,13 +5,22 @@
     <title>Bookstore</title>
 </head>
 <body>
-<h1> Witaj w naszej księgarni</h1>
-<h3> Fajnie ze wpadłeś </h3>
-{% for kat in kategorie %}
 
-<p><a href="kategorie/{{ kat.id }}"> {{ kat.nazwa }} </a></p>
+<div>
+<h1> BOOKSTORE     wyszukiwarka         wyloguj </h1>
+</div>
 
-{% endfor %}
+<div style="clear:both"></div>
+<div style="width:200px; float:left">
+    <h3> MENU </h3>
+    {% for kat in kategorie %}
+        <p><a href="/kategoria/{{ kat.id }}"> {{ kat.name }} </a></p>
+    {% endfor %}
+</div>
 
+<div style="width:700; float:left">
+    {% block produkt %}  {% endblock produkt %}
+</div>
+<div style="clear:both"></div>
 </body>
 </html>

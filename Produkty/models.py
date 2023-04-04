@@ -14,9 +14,9 @@ class Autor(models.Model):
 
 class Kategoria(models.Model):
     def __str__(self):
-        return self.nazwa
+        return self.name
 
-    nazwa = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
 
     class Meta:
         verbose_name = 'Kategoria'
@@ -25,11 +25,11 @@ class Kategoria(models.Model):
 
 class Produkty(models.Model):
     def __str__(self):
-        return self.tytuł
+        return self.nazwa
 
     kategoria = models.ForeignKey(Kategoria, on_delete=models.CASCADE, blank=True, null=True)
     autor = models.ForeignKey(Autor, on_delete=models.CASCADE, null=True)
-    tytuł = models.CharField(max_length=150)
+    nazwa = models.CharField(max_length=150)
     opis = models.TextField(blank=True)
     cena = models.DecimalField(max_digits=99999,decimal_places=2)
 
